@@ -1,5 +1,5 @@
+@ECHO OFF
 set PROGRAM="%~1"
-set EXPECTEDRESULT=96
 
 %PROGRAM% > nul
 if NOT ERRORLEVEL 1 goto err
@@ -25,11 +25,15 @@ rem При запуске с правильными параметрами ожидается нулевой код возврата
 if NOT ERRORLEVEL 1 goto err
 
 rem При запуске с правильными параметрами ожидается нулевой код возврата
-%PROGRAM% 6
+%PROGRAM% >testResult.txt 6
+if ERRORLEVEL 1 goto err
+fc.exe "testResult.txt" resultForSix.txt >nul
 if ERRORLEVEL 1 goto err
 
 rem При запуске с правильными параметрами ожидается нулевой код возврата
-%PROGRAM% 96
+%PROGRAM% >testResult.txt 96
+if ERRORLEVEL 1 goto err
+fc.exe "testResult.txt" resultForNineSix.txt >nul
 if ERRORLEVEL 1 goto err
 
 echo OK

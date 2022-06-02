@@ -38,9 +38,9 @@ fc.exe "%TEMP%\fox.txt" fox-replace-dog-with-cat.txt >nul
 if ERRORLEVEL 1 goto err
 
 rem тест 8
-%PROGRAM% specialTest.txt "%TEMP%\specialTest.txt" 1231234 cat
+%PROGRAM% specialTest.txt "%TEMP%\fox.txt" 1231234 cat
 if ERRORLEVEL 1 goto err
-fc.exe "%TEMP%\specialTest.txt" specialTestResult.txt >nul
+fc.exe "%TEMP%\fox.txt" specialTestResult.txt >nul
 if ERRORLEVEL 1 goto err
 
 echo OK

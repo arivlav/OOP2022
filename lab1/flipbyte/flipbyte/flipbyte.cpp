@@ -43,8 +43,15 @@ int main(int argc, char* argv[])
 		cout << e.what() << endl;
 		return 1;
 	}
+	catch (out_of_range& e)
+	{
+		cout << e.what() << endl;
+		return 1;
+	}
 
-	cout << "New number: " << FlipByte(inputNumber) << endl;
+	unsigned int newNumber = FlipByte(inputNumber); 
+
+	cout << "New number: " << newNumber << endl;
 
 	return 0;
 }
